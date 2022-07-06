@@ -125,9 +125,10 @@ layouts = [
     # layout.Bsp(),
     # layout.Matrix(),
     layout.MonadTall(
-           border_normal = "#414868",
+           border_normal = "#1a1b26",
            border_focus = "#bb9af7",    
-           margin = 12
+           margin = 8,
+           border_width = 3
            ),
     # layout.MonadWide(),
     # layout.RatioTile(),
@@ -150,16 +151,16 @@ screens = [
             [
                 widget.GroupBox(
                     font='JetBrains Mono Semibold',
-                    active='ffffff',
-                    inactive='ffffff',
+                    active='c0caf5',
+                    inactive='c0caf5',
                     background='1a1b26',
                     foreground='c0caf5',
                     this_screen_border='bb9af7',
                     this_current_screen_border='bb9af7',
-                    margin_x=2,
-                    margin_y=2,
+                    margin_x=3,
+                    margin_y=3,
                     highlight_method='block',
-                    rounded=False,
+                    rounded=True,
                     borderwidth=5,
                     #highlight_color=['414868','414868'],
                     ),
@@ -171,12 +172,41 @@ screens = [
                 widget.WindowName(
                     font='JetBrains Mono Semibold',
                     background='1a1b26',
-                    foreground='ffffff',
+                    foreground='c0caf5',
+                    ),
+                widget.TextBox(
+                    text='Mem Usage:',
+                    background='1a1b26',
+                    foreground='c0caf5',
+                    font='JetBrains Mono Semibold',
+                    ),
+                widget.MemoryGraph(
+                    background='1a1b26',
+                    type='box',
+                    graph_color='bb9af7',
+                    border_width=0,
+                    ),
+                widget.Sep(
+                    background='1a1b26',
+                    linewidth=0,
+                    padding=26,
+                    ),
+                widget.Net(
+                    font='JetBrains Mono Semibold',
+                    background='1a1b26',
+                    foreground='c0caf5',
+                    interface='enp11s0',
+                    ),
+                widget.Sep(
+                    background='1a1b26',
+                    linewidth=0,
+                    padding=20,
                     ),
                 widget.Clock(
                     font='JetBrains Mono Semibold',
                     format="%d/%m/%y %H:%M",
                     background='1a1b26',
+                    foreground='c0caf5',
                     ),
                 widget.Sep(
                     padding=5,
@@ -184,9 +214,12 @@ screens = [
                     background='1a1b26',
                     ),
             ],
-            24,
+            30,
             # border_width=[2, 0, 2, 0],  # Draw top and bottom borders
             # border_color=["ff00ff", "000000", "ff00ff", "000000"],  # Borders are magenta
+            border_width = [0, 0, 0, 0],
+            border_color = '#bb9af7',
+            margin=8
 
         ),
     ),

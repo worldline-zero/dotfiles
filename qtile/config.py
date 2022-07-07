@@ -126,7 +126,7 @@ layouts = [
     # layout.Matrix(),
     layout.MonadTall(
            border_normal = "#1a1b26",
-           border_focus = "#bb9af7",    
+           border_focus = "#1a1b26",    
            margin = 8,
            border_width = 3
            ),
